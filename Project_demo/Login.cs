@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace Project_demo
 {
     public partial class Login : Form
@@ -23,14 +22,28 @@ namespace Project_demo
 
         }
 
-        private void txtBoxUsername_TextChanged(object sender, EventArgs e)
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void txtBoxPassword_TextChanged(object sender, EventArgs e)
+        private void btn_login_Click(object sender, EventArgs e)
         {
-            
+            if (txtUsername.Text == "admin" && txtPassword.Text == "admin")
+            {
+                Form1 fm = new Form1();
+                fm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Incorect Username or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
